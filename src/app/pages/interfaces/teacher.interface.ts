@@ -1,5 +1,5 @@
 export interface Teacher {
-  idProfesor?: number;
+  idProfesor: number;
   nombreProfesor: string;
   apellidoProfesor: string;
   fechaIngreso: string;
@@ -8,5 +8,5 @@ export interface Teacher {
   celularPersonal: number;
   activo: boolean;
   dniProfesor: number;
-  clave_profesor?: string;
+  clave_profesor: string;
 }

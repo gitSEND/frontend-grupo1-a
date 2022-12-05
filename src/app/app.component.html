@@ -1,1 +1,8 @@
-<router-outlet></router-outlet>
+<main class="d-flex">
+  <div *ngIf="showSideBar">
+    <app-sidebar></app-sidebar>
+  </div>
+  <div class="p-3 w-100">
+    <router-outlet></router-outlet>
+  </div>
+</main>

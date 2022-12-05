@@ -1,1 +1,54 @@
-<p>dashboard works!</p>
+<div class="d-flex justify-content-between flex-wrap p-5 h-100 gap-3">
+  <div class="card w-100" (click)="navegate('alumno')">
+    <div class="card-body">
+      <div class="d-flex justify-content-between px-md-1">
+        <div>
+          <h3 class="text-warning">Ingresar al módulo: ALUMNO</h3>
+          <p class="mb-0">
+            Este módulo contiene las operaciones de Registrar, Actualizar y
+            Eliminar los alumnos que están en la base de datos.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card w-100" (click)="navegate('profesor')">
+    <div class="card-body">
+      <div class="d-flex justify-content-between px-md-1">
+        <div>
+          <h3 class="text-info">Ingresar al módulo: PROFESOR</h3>
+          <p class="mb-0">
+            Este módulo contiene las operaciones de Registrar, Actualizar y
+            Eliminar los profesores que están en la base de datos.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card w-100" (click)="navegate('asistencia')">
+    <div class="card-body">
+      <div class="d-flex justify-content-between px-md-1">
+        <div>
+          <h3 class="text-danger">Ingresar al módulo: ASISTENCIA</h3>
+          <p class="mb-0">
+            Este módulo contiene las operaciones de Registrar, Actualizar y
+            Consultar las asistencias de los alumnos.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card w-100" (click)="navegate('nota')">
+    <div class="card-body">
+      <div class="d-flex justify-content-between px-md-1">
+        <div>
+          <h3 class="text-success">Ingresar al módulo: NOTAS</h3>
+          <p class="mb-0">
+            Este módulo contiene las operaciones de Registrar, Actualizar y
+            Consultar las notas de los alumnos.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

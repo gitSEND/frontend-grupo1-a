@@ -1,0 +1,193 @@
+<div>
+  <form [formGroup]="studentForm" class="form-horizontal" (ngSubmit)="save()">
+    <div class="form-body">
+      <a
+        class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom"
+      >
+        <span class="fs-5 fw-semibold">MÓDULO ALUMNO</span>
+      </a>
+      <hr class="m-t-0 m-b-40" />
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <div class="form-group row">
+            <label class="control-label text-right col-md-3">Nombres</label>
+            <div class="col-md-9">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Ingresar aquí"
+                formControlName="nombreAlumno"
+              />
+              <small
+                class="form-control-feedback"
+                *ngIf="!!studentForm.controls['nombreAlumno'].errors"
+              >
+                Este campo es obligatorio
+              </small>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group has-danger row">
+            <label class="control-label text-right col-md-3">Apellidos</label>
+            <div class="col-md-9">
+              <input
+                type="text"
+                class="form-control form-control-danger"
+                placeholder="Ingresar aquí"
+                formControlName="apellidoAlumno"
+              />
+              <small
+                class="form-control-feedback"
+                *ngIf="!!studentForm.controls['apellidoAlumno'].errors"
+              >
+                Este campo es obligatorio
+              </small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <div class="form-group row">
+            <label class="control-label text-right col-md-3">Género</label>
+            <div class="col-md-9">
+              <select
+                class="form-control custom-select"
+                formControlName="genero"
+              >
+                <option value="masculino">Masculino</option>
+                <option value="femenino">Femenino</option>
+              </select>
+              <small
+                class="form-control-feedback"
+                *ngIf="!!studentForm.controls['genero'].errors"
+              >
+                Este campo es obligatorio
+              </small>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group row">
+            <label class="control-label text-right col-md-3"
+              >Fecha de ingreso</label
+            >
+            <div class="col-md-9">
+              <input
+                type="date"
+                class="form-control"
+                placeholder="dd/mm/yyyy"
+                formControlName="fechaIngreso"
+              />
+              <small
+                class="form-control-feedback"
+                *ngIf="!!studentForm.controls['fechaIngreso'].errors"
+              >
+                Este campo es obligatorio
+              </small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <div class="form-group row">
+            <label class="control-label text-right col-md-3">Correo</label>
+            <div class="col-md-9">
+              <input
+                type="text"
+                class="form-control"
+                formControlName="correoPersonal"
+              />
+              <small
+                class="form-control-feedback"
+                *ngIf="!!studentForm.controls['correoPersonal'].errors"
+              >
+                Este campo es obligatorio
+              </small>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group row">
+            <label class="control-label text-right col-md-3">Celular</label>
+            <div class="col-md-9">
+              <input
+                type="text"
+                maxlength="9"
+                class="form-control"
+                formControlName="celularPersonal"
+              />
+              <small
+                class="form-control-feedback"
+                *ngIf="!!studentForm.controls['celularPersonal'].errors"
+              >
+                Este campo es obligatorio
+              </small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group row">
+            <label class="control-label text-right col-md-3">Estado</label>
+            <div class="col-md-9">
+              <select
+                class="form-control custom-select"
+                formControlName="activo"
+              >
+                <option value="true">Activo</option>
+                <option value="false">No activo</option>
+              </select>
+              <small
+                class="form-control-feedback"
+                *ngIf="!!studentForm.controls['activo'].errors"
+              >
+                Este campo es obligatorio
+              </small>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group row">
+            <label class="control-label text-right col-md-3">DNI</label>
+            <div class="col-md-9">
+              <input
+                type="text"
+                maxlength="8"
+                class="form-control"
+                formControlName="dniAlumno"
+              />
+              <small
+                class="form-control-feedback"
+                *ngIf="!!studentForm.controls['dniAlumno'].errors"
+              >
+                Este campo es obligatorio
+              </small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <div class="form-actions">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-md-offset-3 col-md-9">
+              <button type="submit" class="btn btn-success">
+                {{ !!student?.idAlumno ? "Actualizar" : "Registrar" }}
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6"></div>
+      </div>
+    </div>
+  </form>
+</div>

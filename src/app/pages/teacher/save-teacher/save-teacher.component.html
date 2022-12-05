@@ -1,7 +1,11 @@
 <div>
   <form [formGroup]="teacherForm" class="form-horizontal" (ngSubmit)="save()">
     <div class="form-body">
-      <h3 class="box-title">Completar el formulario</h3>
+      <a
+        class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom"
+      >
+        <span class="fs-5 fw-semibold">MÓDULO ALUMNO</span>
+      </a>
       <hr class="m-t-0 m-b-40" />
       <div class="row mb-3">
         <div class="col-md-6">
@@ -14,7 +18,12 @@
                 placeholder="Ingresar aquí"
                 formControlName="nombreProfesor"
               />
-              <!-- <small class="form-control-feedback"> This is inline help </small> -->
+              <small
+                class="form-control-feedback"
+                *ngIf="!!teacherForm.controls['nombreProfesor'].errors"
+              >
+                Este campo es obligatorio
+              </small>
             </div>
           </div>
         </div>
@@ -28,7 +37,12 @@
                 placeholder="Ingresar aquí"
                 formControlName="apellidoProfesor"
               />
-              <!-- <small class="form-control-feedback"> This field has error. </small> -->
+              <small
+                class="form-control-feedback"
+                *ngIf="!!teacherForm.controls['apellidoProfesor'].errors"
+              >
+                Este campo es obligatorio
+              </small>
             </div>
           </div>
         </div>
@@ -46,7 +60,12 @@
                 <option value="masculino">Masculino</option>
                 <option value="femenino">Femenino</option>
               </select>
-              <small class="form-control-feedback"> </small>
+              <small
+                class="form-control-feedback"
+                *ngIf="!!teacherForm.controls['genero'].errors"
+              >
+                Este campo es obligatorio
+              </small>
             </div>
           </div>
         </div>
@@ -62,6 +81,12 @@
                 placeholder="dd/mm/yyyy"
                 formControlName="fechaIngreso"
               />
+              <small
+                class="form-control-feedback"
+                *ngIf="!!teacherForm.controls['fechaIngreso'].errors"
+              >
+                Este campo es obligatorio
+              </small>
             </div>
           </div>
         </div>
@@ -77,6 +102,12 @@
                 class="form-control"
                 formControlName="correoPersonal"
               />
+              <small
+                class="form-control-feedback"
+                *ngIf="!!teacherForm.controls['correoPersonal'].errors"
+              >
+                Este campo es obligatorio
+              </small>
             </div>
           </div>
         </div>
@@ -90,6 +121,12 @@
                 class="form-control"
                 formControlName="celularPersonal"
               />
+              <small
+                class="form-control-feedback"
+                *ngIf="!!teacherForm.controls['celularPersonal'].errors"
+              >
+                Este campo es obligatorio
+              </small>
             </div>
           </div>
         </div>
@@ -107,7 +144,12 @@
                 <option value="true">Activo</option>
                 <option value="false">No activo</option>
               </select>
-              <small class="form-control-feedback"> </small>
+              <small
+                class="form-control-feedback"
+                *ngIf="!!teacherForm.controls['activo'].errors"
+              >
+                Este campo es obligatorio
+              </small>
             </div>
           </div>
         </div>
@@ -121,6 +163,12 @@
                 class="form-control"
                 formControlName="dniProfesor"
               />
+              <small
+                class="form-control-feedback"
+                *ngIf="!!teacherForm.controls['dniProfesor'].errors"
+              >
+                Este campo es obligatorio
+              </small>
             </div>
           </div>
         </div>
@@ -142,46 +190,4 @@
       </div>
     </div>
   </form>
-</div>
-
-<!-- TABLA DE PROFESORES -->
-
-<div class="card mt-5" style="height: 400px; overflow-y: auto">
-  <div class="card-body">
-    <h4 class="card-title">Listado de Profesores</h4>
-    <div class="table-responsive">
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>Dni</th>
-            <th>Nombres</th>
-            <th>Apellidos</th>
-            <th>Genero</th>
-            <th>Fecha ingreso</th>
-            <th>Correo</th>
-            <th>Celular</th>
-            <th>Activo</th>
-            <th class="text-nowrap">Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let t of teachers">
-            <td>{{ t.dniProfesor }}</td>
-            <td>{{ t.nombreProfesor }}</td>
-            <td>{{ t.apellidoProfesor }}</td>
-            <td>{{ t.genero }}</td>
-            <td>{{ t.fechaIngreso | date: "YYYY-MM-dd" }}</td>
-            <td>{{ t.correoPersonal }}</td>
-            <td>{{ t.celularPersonal }}</td>
-            <td>{{ t.activo }}</td>
-            <td class="text-nowrap">
-              <i (click)="edit(t)" class="bi bi-pencil-square p-1"></i>
-
-              <i class="bi bi-x-square p-1"></i>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
 </div>

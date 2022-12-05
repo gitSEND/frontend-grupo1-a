@@ -8,13 +8,12 @@ import { AuthService } from 'src/app/core/service/auth.service';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-  constructor(private auth: AuthService, private router: Router) {}
+  constructor(private auth: AuthService, private router: Router) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   enter() {
     this.auth.login('admin', 'admin');
-    this.router.navigateByUrl('/maintenance');
-    console.log('click me!');
+    this.router.navigateByUrl('/dashboard');
   }
 }

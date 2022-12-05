@@ -1,0 +1,39 @@
+<a
+  class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom"
+>
+  <span class="fs-5 fw-semibold">LISTA DE ALUMNOS REGISTRADOS</span>
+</a>
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Dni</th>
+        <th>Nombres</th>
+        <th>Apellidos</th>
+        <th>Genero</th>
+        <th>Fecha ingreso</th>
+        <th>Correo</th>
+        <th>Celular</th>
+        <th>Activo</th>
+        <th class="text-nowrap">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let s of students">
+        <td>{{ s.dniAlumno }}</td>
+        <td>{{ s.nombreAlumno }}</td>
+        <td>{{ s.apellidoAlumno }}</td>
+        <td>{{ s.genero }}</td>
+        <td>{{ s.fechaIngreso | date : "YYYY-MM-dd" }}</td>
+        <td>{{ s.correoPersonal }}</td>
+        <td>{{ s.celularPersonal }}</td>
+        <td>{{ s.activo }}</td>
+        <td class="text-nowrap">
+          <i (click)="edit(s.idAlumno)" class="bi bi-pencil-square p-1"></i>
+
+          <i class="bi bi-x-square p-1" (click)="delete(s.idAlumno!)"></i>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

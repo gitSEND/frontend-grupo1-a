@@ -1,0 +1,39 @@
+<a
+  class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom"
+>
+  <span class="fs-5 fw-semibold">LISTA DE PROFESORES REGISTRADOS</span>
+</a>
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Dni</th>
+        <th>Nombres</th>
+        <th>Apellidos</th>
+        <th>Genero</th>
+        <th>Fecha ingreso</th>
+        <th>Correo</th>
+        <th>Celular</th>
+        <th>Activo</th>
+        <th class="text-nowrap">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let t of teachers">
+        <td>{{ t.dniProfesor }}</td>
+        <td>{{ t.nombreProfesor }}</td>
+        <td>{{ t.apellidoProfesor }}</td>
+        <td>{{ t.genero }}</td>
+        <td>{{ t.fechaIngreso | date : "YYYY-MM-dd" }}</td>
+        <td>{{ t.correoPersonal }}</td>
+        <td>{{ t.celularPersonal }}</td>
+        <td>{{ t.activo }}</td>
+        <td class="text-nowrap">
+          <i (click)="edit(t.idProfesor)" class="bi bi-pencil-square p-1"></i>
+
+          <i class="bi bi-x-square p-1" (click)="delete(t.idProfesor!)"></i>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

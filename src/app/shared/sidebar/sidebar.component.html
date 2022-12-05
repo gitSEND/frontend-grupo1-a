@@ -1,55 +1,89 @@
-<div
-  class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark"
-  style="width: 280px; height: 100vh"
->
-  <span class="fs-4">Menú Administrador</span>
-  <hr />
-  <ul class="nav nav-pills flex-column mb-auto">
-    <li class="nav-item">
-      <a
-        [routerLink]="['/maintenance/teacher']"
-        routerLinkActive="router-link-active"
-        class="nav-link active"
-        aria-current="page"
+<div class="flex-shrink-0 p-3 bg-white" style="width: 280px">
+  <a
+    class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom"
+  >
+    <span class="fs-5 fw-semibold">MENÚ</span>
+  </a>
+  <ul class="list-unstyled ps-0">
+    <li class="mb-1">
+      <button
+        class="btn btn-toggle align-items-center rounded collapsed"
+        data-bs-toggle="collapse"
+        data-bs-target="#home-collapse"
+        aria-expanded="true"
       >
-        Profesor
-      </a>
+        PROFESOR
+      </button>
+      <div class="collapse show" id="home-collapse">
+        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+          <li>
+            <a routerLink="/profesor/registrar" class="link-dark rounded"
+              >Registrar</a
+            >
+          </li>
+          <li>
+            <a routerLink="/profesor/listar" class="link-dark rounded"
+              >Listar</a
+            >
+          </li>
+        </ul>
+      </div>
     </li>
-    <li>
-      <a [routerLink]="['/maintenance/student']" class="nav-link text-white">
-        Alumno
-      </a>
+    <li class="mb-1">
+      <button
+        class="btn btn-toggle align-items-center rounded collapsed"
+        data-bs-toggle="collapse"
+        data-bs-target="#dashboard-collapse"
+        aria-expanded="false"
+      >
+        ALUMNO
+      </button>
+      <div class="collapse" id="dashboard-collapse">
+        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+          <li>
+            <a routerLink="/alumno/registrar" class="link-dark rounded"
+              >Registrar</a
+            >
+          </li>
+          <li>
+            <a routerLink="/alumno/listar" class="link-dark rounded">Listar</a>
+          </li>
+        </ul>
+      </div>
+    </li>
+    <li class="mb-1">
+      <button
+        class="btn btn-toggle align-items-center rounded collapsed"
+        data-bs-toggle="collapse"
+        data-bs-target="#orders-collapse"
+        aria-expanded="false"
+      >
+        Asistencia
+      </button>
+      <div class="collapse" id="orders-collapse">
+        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+          <li><a href="#" class="link-dark rounded">Registrar</a></li>
+          <li><a href="#" class="link-dark rounded">Consultar</a></li>
+        </ul>
+      </div>
+    </li>
+    <li class="border-top my-3"></li>
+    <li class="mb-1">
+      <button
+        class="btn btn-toggle align-items-center rounded collapsed"
+        data-bs-toggle="collapse"
+        data-bs-target="#account-collapse"
+        aria-expanded="false"
+      >
+        Account
+      </button>
+      <div class="collapse" id="account-collapse" style="">
+        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+          <li><a href="#" class="link-dark rounded">Mi perfil</a></li>
+          <li><a href="#" class="link-dark rounded">Actualizar datos</a></li>
+          <li><a href="#" class="link-dark rounded">Cerrar sesión</a></li>
+        </ul>
+      </div>
     </li>
   </ul>
-  <hr />
-  <div class="dropdown">
-    <a
-      class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
-      id="dropdownUser1"
-      data-bs-toggle="dropdown"
-      aria-expanded="false"
-    >
-      <img
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWgwhEk1avVQswkteuvJeiIy1qTh1BQvAn07Yhurk&s"
-        alt=""
-        width="32"
-        height="32"
-        class="rounded-circle me-2"
-      />
-      <strong>Admin</strong>
-    </a>
-    <ul
-      class="dropdown-menu dropdown-menu-dark text-small shadow"
-      aria-labelledby="dropdownUser1"
-      style=""
-    >
-      <li><a class="dropdown-item" href="#">New project...</a></li>
-      <li><a class="dropdown-item" href="#">Settings</a></li>
-      <li><a class="dropdown-item" href="#">Profile</a></li>
-      <li>
-        <hr class="dropdown-divider" />
-      </li>
-      <li><a class="dropdown-item" href="#">Sign out</a></li>
-    </ul>
-  </div>
 </div>
