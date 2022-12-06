@@ -9,12 +9,12 @@
       <button
         class="btn btn-toggle align-items-center rounded collapsed"
         data-bs-toggle="collapse"
-        data-bs-target="#home-collapse"
-        aria-expanded="true"
+        data-bs-target="#teacher-collapse"
+        aria-expanded="false"
       >
         PROFESOR
       </button>
-      <div class="collapse show" id="home-collapse">
+      <div class="collapse" id="teacher-collapse">
         <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
           <li>
             <a routerLink="/profesor/registrar" class="link-dark rounded"
@@ -33,12 +33,12 @@
       <button
         class="btn btn-toggle align-items-center rounded collapsed"
         data-bs-toggle="collapse"
-        data-bs-target="#dashboard-collapse"
+        data-bs-target="#student-collapse"
         aria-expanded="false"
       >
         ALUMNO
       </button>
-      <div class="collapse" id="dashboard-collapse">
+      <div class="collapse" id="student-collapse">
         <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
           <li>
             <a routerLink="/alumno/registrar" class="link-dark rounded"
@@ -55,15 +55,40 @@
       <button
         class="btn btn-toggle align-items-center rounded collapsed"
         data-bs-toggle="collapse"
-        data-bs-target="#orders-collapse"
+        data-bs-target="#course-collapse"
         aria-expanded="false"
       >
-        Asistencia
+        CURSO
       </button>
-      <div class="collapse" id="orders-collapse">
+      <div class="collapse" id="course-collapse">
         <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-          <li><a href="#" class="link-dark rounded">Registrar</a></li>
-          <li><a href="#" class="link-dark rounded">Consultar</a></li>
+          <li>
+            <a routerLink="/curso/registrar" class="link-dark rounded"
+              >Registrar</a
+            >
+          </li>
+          <li>
+            <a routerLink="/curso/listar" class="link-dark rounded">Listar</a>
+          </li>
+        </ul>
+      </div>
+    </li>
+    <li class="mb-1">
+      <button
+        class="btn btn-toggle align-items-center rounded collapsed"
+        data-bs-toggle="collapse"
+        data-bs-target="#attendance-collapse"
+        aria-expanded="false"
+      >
+        ASISTENCIA
+      </button>
+      <div class="collapse" id="attendance-collapse">
+        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+          <li>
+            <a routerLink="/asistencia/registrar" class="link-dark rounded"
+              >Registrar</a
+            >
+          </li>
         </ul>
       </div>
     </li>

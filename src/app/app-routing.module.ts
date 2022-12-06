@@ -1,5 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AssistanceComponent } from './pages/assistance/assistance.component';
+import { SaveAssistanceComponent } from './pages/assistance/save-assistance/save-assistance.component';
+import { CourseComponent } from './pages/course/course.component';
+import { ListCourseComponent } from './pages/course/list-course/list-course.component';
+import { SaveCourseComponent } from './pages/course/save-course/save-course.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { ListStudentComponent } from './pages/student/list-student/list-student.component';
 import { SaveStudentComponent } from './pages/student/save-student/save-student.component';
@@ -60,6 +65,39 @@ const routes: Routes = [
         path: '',
         redirectTo: 'listar',
         pathMatch: 'full'
+      }
+    ]
+  },
+  {
+    path: 'curso',
+    component: CourseComponent,
+    children: [
+      {
+        path: 'listar',
+        component: ListCourseComponent
+      },
+      {
+        path: 'registrar',
+        component: SaveCourseComponent
+      },
+      {
+        path: 'actualizar/:idCurso',
+        component: SaveCourseComponent
+      },
+      {
+        path: '',
+        redirectTo: 'listar',
+        pathMatch: 'full'
+      }
+    ]
+  },
+  {
+    path: 'asistencia',
+    component: AssistanceComponent,
+    children: [
+      {
+        path: 'registrar',
+        component: SaveAssistanceComponent
       }
     ]
   },

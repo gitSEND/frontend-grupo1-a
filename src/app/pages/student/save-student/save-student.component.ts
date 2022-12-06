@@ -13,7 +13,7 @@ import { StudentService } from '../student.service';
 export class SaveStudentComponent implements OnInit {
 
   studentId!: number;
-  student!: Student;
+  student: Student | undefined;
   studentForm: FormGroup;
 
   constructor(private studentService: StudentService, private fb: FormBuilder, private route: ActivatedRoute, private router: Router) {

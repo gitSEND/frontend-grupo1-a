@@ -1,0 +1,60 @@
+<form [formGroup]="courseForm" class="form-horizontal" (ngSubmit)="save()">
+  <div class="form-body">
+    <a
+      class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom"
+    >
+      <span class="fs-5 fw-semibold">MÓDULO CURSO</span>
+    </a>
+  </div>
+
+  <div class="form-floating mb-3">
+    <input
+      type="text"
+      class="form-control"
+      id="floatingInput"
+      placeholder="Nombre curso"
+      formControlName="nombreCurso"
+    />
+    <label for="floatingInput">Nombre del curso</label>
+    <small
+      class="form-control-feedback"
+      *ngIf="!!courseForm.controls['nombreCurso'].errors"
+    >
+      Este campo es obligatorio
+    </small>
+  </div>
+  <div class="form-floating">
+    <select
+      class="form-select"
+      id="floatingSelect"
+      aria-label="Floating label select example"
+      formControlName="activo"
+    >
+      <option value="">Abrir menú</option>
+      <option value="true">Activo</option>
+      <option value="false">No Activo</option>
+    </select>
+    <label for="floatingSelect">Estado del curso</label>
+    <small
+      class="form-control-feedback"
+      *ngIf="!!courseForm.controls['activo'].errors"
+    >
+      Este campo es obligatorio
+    </small>
+  </div>
+  <hr />
+  <div class="form-actions">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-offset-3 col-md-9">
+            <button type="submit" class="btn btn-success">
+              {{ !!course?.idCurso ? "Actualizar" : "Registrar" }}
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6"></div>
+    </div>
+  </div>
+</form>

@@ -13,9 +13,14 @@ import { TeacherComponent } from './pages/teacher/teacher.component';
 import { SharedModule } from './shared/shared.module';
 import { SaveTeacherComponent } from './pages/teacher/save-teacher/save-teacher.component';
 import { ListTeacherComponent } from './pages/teacher/list-teacher/list-teacher.component';
+import { CourseComponent } from './pages/course/course.component';
+import { SaveCourseComponent } from './pages/course/save-course/save-course.component';
+import { ListCourseComponent } from './pages/course/list-course/list-course.component';
+import { AssistanceComponent } from './pages/assistance/assistance.component';
+import { SaveAssistanceComponent } from './pages/assistance/save-assistance/save-assistance.component';
 
 @NgModule({
-  declarations: [AppComponent, DashboardComponent, StudentComponent, TeacherComponent, ListStudentComponent, SaveStudentComponent, SaveTeacherComponent, ListTeacherComponent],
+  declarations: [AppComponent, DashboardComponent, StudentComponent, TeacherComponent, ListStudentComponent, SaveStudentComponent, SaveTeacherComponent, ListTeacherComponent, CourseComponent, SaveCourseComponent, ListCourseComponent, AssistanceComponent, SaveAssistanceComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, SharedModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],

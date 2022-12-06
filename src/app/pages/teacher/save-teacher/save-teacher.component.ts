@@ -12,7 +12,7 @@ import { TeacherService } from '../teacher.service';
 })
 export class SaveTeacherComponent implements OnInit {
   teacherId!: number;
-  teacher!: Teacher;
+  teacher: Teacher | undefined;
   teachers: Teacher[] = [];
   teacherForm: FormGroup;
 
@@ -45,7 +45,7 @@ export class SaveTeacherComponent implements OnInit {
       this.teacherService.saveTeacher(this.teacherForm.value).subscribe(() => this.messageSuccess());
 
     } else {
-      const teacher: Teacher = { ...this.teacherForm.value, idAlumno: this.teacher.idProfesor }
+      const teacher: Teacher = { ...this.teacherForm.value, idProfesor: this.teacher.idProfesor }
       this.teacherService.saveTeacher(teacher).subscribe(() => this.messageSuccess());
     }
   }
@@ -63,6 +63,8 @@ export class SaveTeacherComponent implements OnInit {
 
 
   edit(teacher: Teacher) {
+    console.log(teacher);
+
     this.teacher = teacher;
     this.teacherForm.setValue({
       nombreProfesor: teacher.nombreProfesor,
