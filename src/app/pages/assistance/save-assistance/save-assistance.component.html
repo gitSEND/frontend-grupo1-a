@@ -1,18 +1,103 @@
-<table class="table table-bordered">
-  <thead>
-    <tr>
-      <th scope="col">N°</th>
-      <th scope="col">Nombres</th>
-      <th scope="col">Apellidos</th>
-      <th scope="col">Asistencia</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-  </tbody>
-</table>
+<a
+  class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom"
+>
+  <span class="fs-5 fw-semibold">REGISTRO DE ASISTENCIA</span>
+</a>
+<form [formGroup]="assistanceForm" (ngSubmit)="save()">
+  <div class="d-flex">
+    <div class="form-floating me-4">
+      <select
+        class="form-select"
+        id="floatingSelect"
+        aria-label="Floating label select example"
+        formControlName="teacherSelected"
+      >
+        <option value="">Selecciona el profesor</option>
+        <option *ngFor="let t of teachers" [value]="t.idProfesor">
+          {{ t.nombreProfesor + " " + t.apellidoProfesor }}
+        </option>
+      </select>
+      <label for="floatingSelect">Profesor</label>
+      <small
+        *ngIf="!!assistanceForm.controls['teacherSelected'].errors"
+        class="form-control-feedback"
+      >
+        Este campo es obligatorio
+      </small>
+    </div>
+    <div class="form-floating me-4">
+      <select
+        class="form-select"
+        id="floatingSelect"
+        aria-label="Floating label select example"
+        formControlName="courseSelected"
+      >
+        <option value="">Selecciona el curso</option>
+        <option *ngFor="let c of courses" [value]="c.idCurso">
+          {{ c.nombreCurso }}
+        </option>
+      </select>
+      <label for="floatingSelect">Curso</label>
+      <small
+        *ngIf="!!assistanceForm.controls['courseSelected'].errors"
+        class="form-control-feedback"
+      >
+        Este campo es obligatorio
+      </small>
+    </div>
+    <div class="form-floating">
+      <input
+        type="date"
+        class="form-control"
+        placeholder="dd/mm/yyyy"
+        formControlName="dateSelected"
+      />
+      <label for="floatingSelect">Ingresa la fecha</label>
+      <small
+        *ngIf="!!assistanceForm.controls['dateSelected'].errors"
+        class="form-control-feedback"
+      >
+        Este campo es obligatorio
+      </small>
+    </div>
+  </div>
+  <hr />
+
+  <table class="table table-bordered mt-4">
+    <thead>
+      <tr>
+        <th scope="col">N°</th>
+        <th scope="col">Nombres</th>
+        <th scope="col">Apellidos</th>
+        <th scope="col">Asistencia</th>
+      </tr>
+    </thead>
+    <tbody formArrayName="assistances">
+      <tr *ngFor="let a of assistancesArr.controls; let i = index">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>{{ a.value.nombres }}</td>
+        <td>{{ a.value.apellidos }}</td>
+        <td>
+          <input
+            class="form-check-input"
+            type="checkbox"
+            [formControlName]="i"
+          />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <hr />
+  <div class="form-actions">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-offset-3 col-md-9">
+            <button type="submit" class="btn btn-success">Registrar</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6"></div>
+    </div>
+  </div>
+</form>
