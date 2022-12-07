@@ -66,22 +66,25 @@
   <table class="table table-bordered mt-4">
     <thead>
       <tr>
-        <th scope="col">N°</th>
+        <th scope="col">Código</th>
         <th scope="col">Nombres</th>
         <th scope="col">Apellidos</th>
         <th scope="col">Asistencia</th>
       </tr>
     </thead>
     <tbody formArrayName="assistances">
-      <tr *ngFor="let a of assistancesArr.controls; let i = index">
-        <th scope="row">{{ i + 1 }}</th>
-        <td>{{ a.value.nombres }}</td>
-        <td>{{ a.value.apellidos }}</td>
+      <tr
+        *ngFor="let a of assistancesArr.controls; let i = index"
+        [formGroupName]="i"
+      >
+        <th><input type="text" formControlName="alumnoId" /></th>
+        <td><input type="text" formControlName="nombres" /></td>
+        <td><input type="text" formControlName="apellidos" /></td>
         <td>
           <input
+            formControlName="asistencia"
             class="form-check-input"
             type="checkbox"
-            [formControlName]="i"
           />
         </td>
       </tr>

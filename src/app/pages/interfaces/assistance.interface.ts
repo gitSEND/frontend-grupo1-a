@@ -1,6 +1,6 @@
 export interface Assistance {
-  idAsistencia: number;
-  fecha: Date;
+  idAsistencia?: number;
+  fecha: string;
   listAsistenciaDetalle: ListAsistenciaDetalle[];
 }
 
@@ -13,5 +13,5 @@ export interface IDAsistenciaDetalle {
   idAlumno: number;
   idProfesor: number;
   idCurso: number;
-  idAsistencia: number;
+  idAsistencia?: number;
 }

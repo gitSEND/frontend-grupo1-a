@@ -13,7 +13,7 @@ export class AppComponent {
   constructor(private router: Router) {
     this.router.events.pipe(filter(event => event instanceof NavigationEnd))
       .subscribe((event: any) => {
-        this.showSideBar = event.url !== '/login' && event.url !== '/';
+        this.showSideBar = event.url !== '/login';
       });
   }
 }
